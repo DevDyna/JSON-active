@@ -1,0 +1,26 @@
+{
+
+    "main": {
+        "var.set": {
+            "id": "my_var",
+            "value": 10
+        },
+
+        "null": "@my_function",
+
+        "sys.out": {
+            "0": "@my_another_function",
+            "1": "End"
+
+        }
+
+    },
+    "my_function": {
+        "return": null
+    },
+
+    "my_another_function": {
+        "return": "@input+1"
+    }
+
+}
