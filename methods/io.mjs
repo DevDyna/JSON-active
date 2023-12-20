@@ -63,3 +63,21 @@ export function rawAppend(url, content){
         }
         return bool
 }
+//-----------------------------------------------------------------------------------//
+export function rawRead(url){
+	return fs.readFileSync(url);
+}
+//-----------------------------------------------------------------------------------//
+export function isExist(filePath) {
+    return fs.existsSync(filePath);
+}
+//-----------------------------------------------------------------------------------//
+export function containDir(url) { //'./tests/'
+    if(fs.readdirSync(url).length == 0){
+		return true
+	}else{
+		
+	return false
+
+}
+}
