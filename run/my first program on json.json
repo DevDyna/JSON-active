@@ -1,13 +1,13 @@
 {
 
     "main": {
-        "var.set": {
+        "sys.var.set": [{
             "id": "my_var",
             "value": 10
-        },
+        }],
 
         "null": "@my_function",
-
+		"@my_another_function" : "@my_var",
         "sys.out": {
             "0": "@my_another_function",
             "1": "End"
@@ -20,7 +20,7 @@
     },
 
     "my_another_function": {
-        "return": "@input+1"
+        "return": "$input+1"
     }
 
 }
