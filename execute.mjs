@@ -9,6 +9,9 @@ main()
 
 async function main() {
     out.decor(20)
+
+    //file analysis
+    //-----------------------------------------------------------------------------//
     try {
         if (!io.isDir('./run/') && !io.isExist('./run/')) {
             throw 'missing folder /run/'
@@ -22,8 +25,11 @@ async function main() {
             totfile.forEach(tag => {
 
                 try {
+                    //main and functions analysis
+                    //-----------------------------------------------------------------------------//
                     console.log(`Reading file : -${tag}-`)
                     let result = io.JsonArray(`run/${tag}`)
+                        //console.log(result)
                         if (!Object.keys(result).includes('main')) {
                             throw 'no main function on file'
                         } else {
@@ -32,18 +38,24 @@ async function main() {
                         }
 
                         out.decor(20)
+                        if (Object.keys(result).length > 1) {
+                            console.log("List of sub-functions : ")
+                            Object.keys(result).map(name => {
+                                if (name !== 'main')
+                                    console.log('- ' + name)
+                            })
+                        } else {
+                            console.log('no sub-functions founded')
+                        }
+                        out.decor(20)
 
-						if(!Object.keys(result).shift() == null){
-                        console.log("List of sub-functions : ")
-                        Object.keys(result).map(name => {
-                            if (name !== 'main')
-                                console.log('- ' + name)
+                        Object.keys(result).map(name => { //OUTPUT MAIN & FUNCTIONS
+                            console.log('SECTION : ' + name)
+                            console.log(result[name])
+                            out.decor(10)
                         })
-						}else{
-							console.log('no sub-functions founded')
-						}
-						out.decor(20)
 
+                        //-----------------------------------------------------------------------------//
                 } catch (error) {
                     console.log(error)
                     out.decor(20)
