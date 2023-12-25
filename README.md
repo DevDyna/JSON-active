@@ -40,10 +40,16 @@ On this example you can find :
 
 ## function logic:
 
-to call the function
-	`"output" : "function"`
-	`"function" : "input"`
-input and output can be null as empty
+to call the function<br />
+
+``
+"output" : "function" 
+``<br />
+``
+"function" : "input"
+``<br />
+ 
+`input` and `output` can be `null` as empty
 
 ## function structure:
 
