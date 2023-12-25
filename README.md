@@ -6,7 +6,7 @@
 
  #  ## Syntax
 like normal standard json files
-
+```js
 {
 	"name" : [value]
 }
@@ -17,7 +17,7 @@ like normal standard json files
 			"index_2": "text127"
 			]
 }
-
+```
 also can be used as pure json if writen right
 
 
