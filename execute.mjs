@@ -8,6 +8,14 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 main()
 
 async function main() {
+	
+	let keywords = []
+	
+	let debug = false
+	if(process.argv.slice(3)== '-debug'){
+		console.log('Debug mode enabled')
+	}
+	
     out.decor(20)
 
     //file analysis
@@ -22,13 +30,14 @@ async function main() {
                 throw 'no file founded on /run/'
             }
 
-            totfile.forEach(tag => {
-
+            totfile.forEach(file => {
+				//forEach file
+				//-----------------------------------------------------------------------------//
                 try {
                     //main and functions analysis
                     //-----------------------------------------------------------------------------//
-                    console.log(`Reading file : -${tag}-`)
-                    let result = io.JsonArray(`run/${tag}`)
+                    console.log(`Reading file : -${file}-`)
+                    let result = io.JsonArray(`run/${file}`)
                         //console.log(result)
                         if (!Object.keys(result).includes('main')) {
                             throw 'no main function on file'
