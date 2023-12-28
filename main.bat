@@ -6,7 +6,7 @@ if %errorlevel% neq 0 (
     echo https://nodejs.org/en/download
 	timeout -1
 )
-    node execute.mjs -await
+    node execute.mjs -await -debug
     
 ::temp
 timeout 10 /nobreak > nul
